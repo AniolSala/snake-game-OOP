@@ -160,5 +160,5 @@ if __name__ == '__main__':
         if symbol == key.LEFT or symbol == key.A:
             world.snake.change_vel(-snake_vel, 0)
 
-    pyglet.clock.schedule_interval(world.update, 1 / 15.)
+    pyglet.clock.schedule_interval(world.update, 1 / 20.)
     pyglet.app.run()
