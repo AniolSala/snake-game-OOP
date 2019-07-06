@@ -7,6 +7,8 @@ class Block:
         self.vertex = []
         self.color = color
 
+        self.red_size = 3  # Reduce the size on draw a little bit
+
     def move(self, delta_x, delta_y):
         self.pos_x += delta_x
         self.pos_y += delta_y
@@ -14,17 +16,17 @@ class Block:
     def set_vertex(self):
         self.vertex = []
         # Add the four vertex to the vertex list
-        self.vertex.append(self.pos_x)
-        self.vertex.append(self.pos_y)
+        self.vertex.append(self.pos_x + self.red_size)
+        self.vertex.append(self.pos_y + self.red_size)
 
-        self.vertex.append(self.pos_x)
-        self.vertex.append(self.pos_y + self.size)
+        self.vertex.append(self.pos_x + self.red_size)
+        self.vertex.append(self.pos_y + self.size - self.red_size)
 
-        self.vertex.append(self.pos_x + self.size)
-        self.vertex.append(self.pos_y + self.size)
+        self.vertex.append(self.pos_x + self.size - self.red_size)
+        self.vertex.append(self.pos_y + self.size - self.red_size)
 
-        self.vertex.append(self.pos_x + self.size)
-        self.vertex.append(self.pos_y)
+        self.vertex.append(self.pos_x + self.size - self.red_size)
+        self.vertex.append(self.pos_y + self.red_size)
 
 
 class Snake:
